@@ -8,6 +8,17 @@ import (
 	//"strconv"
 )
 
+/**
+//账户管理
+account := &controllers.Account{}
+beego.Router("/admin/account", account, "get:Index")
+beego.Router("/admin/account/create", account, "*:Create")
+beego.Router("/admin/account/edit", account, "post:Edit")
+beego.Router("/admin/account/edit/:id:int", account, "get:Edit")
+beego.Router("/admin/account/delete/:id:int", account, "*:Delete")
+beego.Router("/admin/account/reset", account, "*:Reset")
+*/
+
 type Account struct {
 	Admin
 }
@@ -16,6 +27,7 @@ var users = &models.Users{}
 
 //首页
 func (this *Account) Index() {
+	// 读取所有的用户，是否需要分页呢?
 	us, _ := users.GetAll()
 	this.Data["accounts"] = us
 

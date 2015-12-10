@@ -145,6 +145,7 @@ func (this *base) token() string {
 
 //验证签名是否无效
 func (this *base) invalidToken() bool {
+	// 要求: Session中的token和Params中的cookie一致
 	sess := this.GetSession("token")
 	if sess == nil {
 		return true
