@@ -74,7 +74,7 @@ func (this *Image) Create() {
 
 	models.Extend(m, this.xm)
 
-	m.Articleid, _ = this.GetInt("articleid")
+	m.Articleid, _ = this.GetInt64("articleid")
 	m.Title = this.GetString("title")
 	m.Url = this.GetString("url")
 
@@ -143,7 +143,7 @@ func (this *Image) Edit() {
 	//提交DDL
 	var data interface{}
 
-	id, err := this.GetInt("id")
+	id, err := this.GetInt64("id")
 	if err != nil || id == 0 {
 		this.errorHandle(utils.JsonMessage(false, "invalidRequestParams", this.lang("invalidRequestParams")))
 		return
@@ -157,7 +157,7 @@ func (this *Image) Edit() {
 	}
 	//赋值
 	m.Id = id
-	m.Articleid, _ = this.GetInt("articleid")
+	m.Articleid, _ = this.GetInt64("articleid")
 	m.Title = this.GetString("title")
 	m.Url = this.GetString("url")
 	m.Updated = this.xm.Updated
@@ -199,8 +199,8 @@ func (this *Image) Edit() {
 func (this *Image) Sequence() {
 	var data interface{}
 	//
-	id, err1 := this.GetInt("id")
-	sq, err2 := this.GetInt("sq")
+	id, err1 := this.GetInt64("id")
+	sq, err2 := this.GetInt64("sq")
 
 	if err1 != nil || err2 != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err1.Error()+"\n"+err2.Error())
@@ -224,7 +224,7 @@ params：id
 func (this *Image) Reset() {
 	var data interface{}
 	//
-	id, err := this.GetInt("id")
+	id, err := this.GetInt64("id")
 	if err != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err.Error())
 	} else {

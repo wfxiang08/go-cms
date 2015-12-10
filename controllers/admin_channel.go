@@ -69,7 +69,7 @@ func (this *Channel) Create() {
 
 	models.Extend(m, this.xm)
 
-	m.Pid, _ = this.GetInt("pid")
+	m.Pid, _ = this.GetInt64("pid")
 	m.Name = this.GetString("name")
 	m.Enname = this.GetString("enname")
 	t, _ := this.GetInt("children")
@@ -144,13 +144,13 @@ func (this *Channel) Edit() {
 	}
 
 	//获取原始数据模型
-	m, err := channels.Get(id)
+	m, err := channels.Get(int64(id))
 	if err != nil {
 		this.errorHandle(utils.JsonMessage(false, "", err.Error()))
 		return
 	}
 	//赋值
-	m.Pid, _ = this.GetInt("pid")
+	m.Pid, _ = this.GetInt64("pid")
 	m.Name = this.GetString("name")
 	m.Enname = this.GetString("enname")
 	t, _ := this.GetInt("children")
@@ -191,7 +191,7 @@ params：id
 func (this *Channel) Reset() {
 	var data interface{}
 	//
-	id, err := this.GetInt("id")
+	id, err := this.GetInt64("id")
 	if err != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err.Error())
 	} else {
@@ -238,8 +238,8 @@ func (this *Channel) Delete() {
 func (this *Channel) Sequence() {
 	var data interface{}
 	//
-	id, err1 := this.GetInt("id")
-	sq, err2 := this.GetInt("sq")
+	id, err1 := this.GetInt64("id")
+	sq, err2 := this.GetInt64("sq")
 
 	if err1 != nil || err2 != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err1.Error()+"\n"+err2.Error())
@@ -259,8 +259,8 @@ func (this *Channel) Sequence() {
 func (this *Channel) Children() {
 	var data interface{}
 	//
-	id, err1 := this.GetInt("id")
-	sq, err2 := this.GetInt("sq")
+	id, err1 := this.GetInt64("id")
+	sq, err2 := this.GetInt64("sq")
 
 	if err1 != nil || err2 != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err1.Error()+"\n"+err2.Error())

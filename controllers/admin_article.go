@@ -50,7 +50,7 @@ func (this *Article) GetAll() {
 	channelid, _ := this.GetInt("channelid")
 
 	//
-	us, err := articles.GetAll(channelid, page)
+	us, err := articles.GetAll(int64(channelid), page)
 	if err == nil {
 		data = utils.JsonResult(true, fmt.Sprintf("%d", page.Count), us)
 	} else {
@@ -84,7 +84,9 @@ func (this *Article) Create() {
 
 	models.Extend(m, this.xm)
 
-	m.Channelid, _ = this.GetInt("channelid")
+	var cid int
+	cid, _ = this.GetInt("channelid")
+	m.Channelid = int64(cid)
 	m.Title = this.GetString("title")
 	m.Subtitle = this.GetString("subtitle")
 	m.Intro = this.GetString("intro")
@@ -166,13 +168,15 @@ func (this *Article) Edit() {
 	}
 
 	//获取原始数据模型
-	m, err := articles.Get(id)
+	m, err := articles.Get(int64(id))
 	if err != nil {
 		this.errorHandle(utils.JsonMessage(false, "", err.Error()))
 		return
 	}
 	//赋值
-	m.Channelid, _ = this.GetInt("channelid")
+	var cid int
+	cid, _ = this.GetInt("channelid")
+	m.Channelid = int64(cid)
 	m.Title = this.GetString("title")
 	m.Subtitle = this.GetString("subtitle")
 	m.Intro = this.GetString("intro")
@@ -225,7 +229,7 @@ func (this *Article) Reset() {
 		data = utils.JsonMessage(false, "invalidRequestParams", err.Error())
 	} else {
 		//
-		_, err = articles.Reset(id, this.xm)
+		_, err = articles.Reset(int64(id), this.xm)
 		if err == nil {
 			data = utils.JsonMessage(true, "", "")
 		} else {
@@ -273,7 +277,7 @@ func (this *Article) Sequence() {
 		data = utils.JsonMessage(false, "invalidRequestParams", err1.Error()+"\n"+err2.Error())
 	} else {
 		this.xm.Sequence = int(sq)
-		_, err := articles.SetSequence(id, this.xm)
+		_, err := articles.SetSequence(int64(id), this.xm)
 		if err == nil {
 			data = utils.JsonMessage(true, "", "")
 		} else {

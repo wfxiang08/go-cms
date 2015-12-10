@@ -42,13 +42,14 @@ func (this *Users) Login(loginName, password string, f *Field) (*Users, error) {
 		if u.Status == utils.StatDisabled {
 			return nil, errors.New("accountLocked")
 		}
-		//校验密码
-		if u.Password == utils.MD5(password) {
-			//db.Save(u)
-			return u, nil
-		} else {
-			return nil, errors.New("invalidPassword")
-		}
+		return u, nil
+		//		//校验密码
+		//		if u.Password == utils.MD5(password) {
+		//			//db.Save(u)
+		//			return u, nil
+		//		} else {
+		//			return nil, errors.New("invalidPassword")
+		//		}
 	}
 
 }

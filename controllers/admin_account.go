@@ -102,7 +102,7 @@ func (this *Account) Edit() {
 
 	models.Extend(u, this.xm)
 
-	u.Id, _ = this.GetInt("id")
+	u.Id, _ = this.GetInt64("id")
 	u.Loginname = this.GetString("loginname")
 	u.Relname = this.GetString("relname")
 
@@ -170,7 +170,7 @@ params：id
 func (this *Account) Reset() {
 	var data interface{}
 	//
-	id, err := this.GetInt("id")
+	id, err := this.GetInt64("id")
 	if err != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err.Error())
 	} else {

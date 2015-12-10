@@ -55,3 +55,25 @@
 2014/04/23 12:34:05 [E] Orange 内容管理系统 服务启动 
 2014/04/23 12:37:09 [E] Orange 内容管理系统 服务启动 
 2014/04/23 12:37:58 [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:06:20 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:07:27 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:08:23 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:08:39 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:12:20 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:15:54 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:15:54 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static\js\i18n.json 
+2015/12/10 09:16:34 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:16:34 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static\js\i18n.json, Origin: %!(EXTRA string=static\js\i18n.json) 
+2015/12/10 09:16:55 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:16:55 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static\js\i18n.json, Origin: static\js\i18n.json 
+2015/12/10 09:17:51 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:17:51 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static/js/i18n.json, Origin: static/js/i18n.json 
+2015/12/10 09:17:51 [asm_amd64.s:1696] [C] ListenAndServe: %!(EXTRA *net.OpError=listen tcp :80: bind: permission denied)
+2015/12/10 09:18:09 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:18:09 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static/js/i18n.json, Origin: static/js/i18n.json 
+2015/12/10 09:24:47 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:24:47 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static/js/i18n.json, Origin: static/js/i18n.json 
+2015/12/10 09:26:06 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:26:06 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static/js/i18n.json, Origin: static/js/i18n.json 
+2015/12/10 09:28:46 [main.go:38] [E] Orange 内容管理系统 服务启动 
+2015/12/10 09:28:46 [i18n.go:17] [E] I18n Path: /Users/feiwang/gowork/src/cms/static/js/i18n.json, Origin: static/js/i18n.json 
